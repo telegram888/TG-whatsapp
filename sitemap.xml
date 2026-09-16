@@ -1,43 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tgwalink.github.io/TG-whatsapp/</loc>
+    <loc>https://tgwalink.github.io/TG/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG-whatsapp/Detail.html</loc>
+    <loc>https://tgwalink.github.io/TG/Detail.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG-whatsapp/Detail2.html</loc>
+    <loc>https://tgwalink.github.io/TG/Detail2.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG-whatsapp/product.html</loc>
+    <loc>https://tgwalink.github.io/TG/product.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG-whatsapp/product2.html</loc>
+    <loc>https://tgwalink.github.io/TG/product2.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG-whatsapp/product3.html</loc>
+    <loc>https://tgwalink.github.io/TG/product3.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG-whatsapp/product4.html</loc>
+    <loc>https://tgwalink.github.io/TG/product4.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG-whatsapp/product5.html</loc>
+    <loc>https://tgwalink.github.io/TG/product5.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tgwalink.github.io/TG/google0c807aa07f2a76a.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>
