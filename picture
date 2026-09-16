@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Telegram SVG</title>
+<style>
+.tg-svg {
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.tg-svg:hover {
+  filter: drop-shadow(0 0 6px #2AABEE);
+}
+</style>
+</head>
+<body>
+
+<!-- 标准Telegram图标 -->
+<a href="https://t.me/你的账号" target="_blank">
+  <svg class="tg-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="12" fill="#2AABEE"/>
+    <path d="M5.492 11.374L17.302 6.606C17.854 6.391 18.338 6.723 18.173 7.323L15.913 17.173C15.743 17.926 15.317 18.088 14.68 17.738L10.997 15.018L9.227 16.722C9.032 16.917 8.87 17.08 8.543 17.08L8.807 13.253L15.443 7.423C15.733 7.183 15.383 7.053 15.013 7.293L7.193 12.223L3.613 11.133C2.833 10.913 2.773 10.383 3.403 10.053L19.603 2.433" fill="white"/>
+  </svg>
+</a>
+
+</body>
+</html>
