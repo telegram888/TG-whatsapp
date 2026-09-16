@@ -11,27 +11,61 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG/product.html</loc>
+    <loc>https://tgwalink.github.io/TG/Detailtwo.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- WhatsApp 商品页 -->
+  <url>
+    <loc>https://tgwalink.github.io/TG/whatsApp/waproduct.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG/product2.html</loc>
+    <loc>https://tgwalink.github.io/TG/whatsApp/waproduct_two.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG/product3.html</loc>
+    <loc>https://tgwalink.github.io/TG/whatsApp/waproduct_three.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG/product4.html</loc>
+    <loc>https://tgwalink.github.io/TG/whatsApp/waproduct_four.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG/product5.html</loc>
+    <loc>https://tgwalink.github.io/TG/whatsApp/waproduct_five.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Telegram 商品页 -->
+  <url>
+    <loc>https://tgwalink.github.io/TG/telegram/product.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+    <url>
+    <loc>https://tgwalink.github.io/TG/telegram/product_two.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+    <url>
+    <loc>https://tgwalink.github.io/TG/telegram/product_three.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+    <url>
+    <loc>https://tgwalink.github.io/TG/telegram/product_four.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+    <url>
+    <loc>https://tgwalink.github.io/TG/telegram/product_five.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
