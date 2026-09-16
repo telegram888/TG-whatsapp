@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品详情 - FYSK飞机号</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft Yahei", sans-serif; }
+    body { background-color: #FFF9F0; color: #2C3333; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* 顶部导航 */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; flex-wrap: wrap; gap: 12px; }
+    .logo { font-size: 24px; font-weight: bold; color: #2C3333; text-decoration: none; }
+    .nav-links a { margin-left: 24px; text-decoration: none; color: #374151; }
+
+    /* 面包屑 */
+    .breadcrumb { padding: 10px 0 20px; font-size: 14px; color: #6B7280; }
+    .breadcrumb a { color: #B45309; text-decoration: none; }
+
+    /* 详情主体 */
+    .detail-wrap { display: grid; grid-template-columns: 520px 1fr; gap: 40px; padding: 20px 0 60px; }
+    
+    /* 商品图区域 */
+    .goods-img-box { background: #fff; border-radius: 16px; padding: 20px; border: 1px solid #F3E8D6; }
+    .goods-big-img { width: 100%; height: 360px; background: #F9F5F0; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 16px; }
+
+    /* 商品信息区 */
+    .goods-info { background: #fff; border-radius: 16px; padding: 30px; border: 1px solid #F3E8D6; }
+    .goods-info h1 { font-size: 26px; color: #1F2937; margin-bottom: 12px; line-height: 1.4; }
+    .goods-meta { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .badge { font-size: 13px; padding: 4px 10px; border-radius: 6px; }
+    .badge-yellow { background: #FEF3C7; color: #92400E; }
+    .badge-blue { background: #DBEAFE; color: #1E40AF; }
+    .badge-green { background: #D1FAE5; color: #065F46; }
+    .price-line { display: flex; align-items: baseline; gap: 12px; margin: 20px 0; }
+    .price { font-size: 36px; font-weight: bold; color: #B45309; }
+    .price-desc { font-size: 14px; color: #6B7280; }
+
+    /* 规格与描述 */
+    .spec-box { margin: 24px 0; padding: 20px; background: #FFFBEF; border-radius: 10px; }
+    .spec-box h3 { font-size: 16px; margin-bottom: 12px; color: #92400E; }
+    .spec-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 14px; }
+    .spec-list span { color: #4B5563; }
+
+    .desc-box { margin-top: 24px; }
+    .desc-box h3 { font-size: 18px; margin-bottom: 12px; color: #1F2937; padding-bottom: 8px; border-bottom: 1px dashed #E5E7EB; }
+    .desc-box p { font-size: 15px; color: #4B5563; margin-bottom: 8px; line-height: 1.8; }
+
+    /* 按钮区 */
+    .btn-area { display: flex; gap: 16px; margin-top: 30px; flex-wrap: wrap; }
+    .btn-primary { flex: 1; min-width: 160px; background: #D97706; color: white; border: none; padding: 14px 28px; border-radius: 12px; font-size: 17px; cursor: pointer; text-decoration: none; display: inline-block; text-align: center; font-weight: bold; transition: background 0.2s; }
+    .btn-primary:hover { background: #B45309; }
+    .btn-outline { flex: 1; min-width: 160px; background: white; color: #D97706; border: 1px solid #D97706; padding: 14px 28px; border-radius: 12px; font-size: 17px; cursor: pointer; text-decoration: none; display: inline-block; text-align: center; font-weight: 500; transition: all 0.2s; }
+    .btn-outline:hover { background: #FFF7ED; }
+
+    /* 悬浮客服按钮 */
+    .service-float {
+      position: fixed;
+      right: 24px;
+      bottom: 32px;
+      z-index: 999;
+      background: linear-gradient(135deg, #D97706, #B45309);
+      color: white;
+      padding: 14px 22px;
+      border-radius: 50px;
+      box-shadow: 0 4px 16px rgba(180, 83, 9, 0.35);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+    .service-float:hover { transform: translateY(-3px); }
+
+    footer { text-align: center; padding: 30px 0; color: #9CA3AF; font-size: 14px; border-top: 1px solid #F3E8D6; margin-top: 20px; }
+
+    /* 响应式 */
+    @media(max-width:900px) {
+      .detail-wrap { grid-template-columns: 1fr; gap: 20px; }
+      .goods-big-img { height: 280px; }
+      .spec-list { grid-template-columns: 1fr; }
+      .nav-links a { margin-left: 12px; font-size: 14px; }
+      nav { flex-direction: column; text-align: center; }
+      .service-float { right: 16px; bottom: 20px; padding: 12px 18px; font-size: 15px; }
+    }
+    @media(max-width:480px) {
+      .goods-big-img { height: 200px; }
+      .price { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 悬浮客服按钮 -->
+  <a href="https://t.me/DDXX88888888" target="_blank" class="service-float">💬 在线咨询</a>
+
+  <div class="container">
+    <!-- 顶部导航 -->
+    <nav>
+      <a href="index.html" class="logo">FYSK飞机号</a>
+      <div class="nav-links">
+        <a href="index.html#home">首页</a>
+        <a href="index.html#goods">商品中心</a>
+        <a href="index.html#service">服务内容</a>
+        <a href="index.html#contact">联系我们</a>
+      </div>
+    </nav>
+
+    <!-- 面包屑 -->
+    <div class="breadcrumb">
+      <a href="index.html">首页</a> / <a href="index.html#goods">商品中心</a> / 商品详情
+    </div>
+
+    <!-- 商品详情主体 -->
+    <div class="detail-wrap">
+      <!-- 左侧大图 -->
+      <div class="goods-img-box">
+        <div class="goods-big-img">📷 商品图片占位<br>替换为实际图片即可</div>
+      </div>
+
+      <!-- 右侧信息 -->
+      <div class="goods-info">
+        <h1>飞机号（美国）｜注册一年+号｜手机电脑通用</h1>
+        <div class="goods-meta">
+          <span class="badge badge-yellow">游客可购</span>
+          <span class="badge badge-blue">自动交付</span>
+          <span class="badge badge-green">有库存</span>
+        </div>
+        <div class="price-line">
+          <span class="price">¥26.80</span>
+          <span class="price-desc">官方正品 · 售后保障 · 自动发货</span>
+        </div>
+
+        <!-- 规格参数 -->
+        <div class="spec-box">
+          <h3>📋 商品规格</h3>
+          <div class="spec-list">
+            <span>📌 注册地区：美国</span>
+            <span>⏰ 注册时长：1年以上</span>
+            <span>🔧 适用设备：手机/电脑通用</span>
+            <span>✅ 账号状态：正常可用</span>
+            <span>📦 交付方式：自动发货</span>
+            <span>🔒 售后保障：协助找回/换绑</span>
+          </div>
+        </div>
+
+        <!-- 详细介绍 -->
+        <div class="desc-box">
+          <h3>📝 商品介绍</h3>
+          <p>✨ 精养一年优质美国号，长期稳定耐用，适合各类海外业务场景。</p>
+          <p>✅ 账号干净无违规记录，可正常发送消息、加入群组、建立频道。</p>
+          <p>📱 支持多设备同时登录，手机/电脑/平板无缝同步。</p>
+          <p>🔑 发货内容：账号 + 密码 + 二次验证 + 使用说明。</p>
+          <p>🛡️ 交付后提供使用指导与售后支持，有任何问题随时联系客服。</p>
+        </div>
+
+        <!-- 按钮区 -->
+        <div class="btn-area">
+          <a href="https://t.me/DDXX88888888" target="_blank" class="btn-primary">💬 立即购买</a>
+          <a href="C:\Users\LENOVO\Desktop\TG\BUYTG\Detail.html" class="btn-outline">← 返回商品列表</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer>
+      © 2025 FYSK飞机号 · 海外社媒账号服务 · 专注咨询与支持
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GZ飞机号/WhatsApp</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft Yahei", sans-serif; }
+    body { background-color: #FFF9F0; color: #2C3333; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* 顶部导航 */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; flex-wrap: wrap; gap: 12px; }
+    .logo { font-size: 24px; font-weight: bold; color: #2C3333; }
+    .nav-links a { margin-left: 24px; text-decoration: none; color: #374151; }
+
+    /* 主视觉区 */
+    .hero { text-align: center; padding: 60px 0 80px; }
+    .tag { display: inline-block; background: #FED7AA; color: #92400E; padding: 8px 20px; border-radius: 50px; font-size: 15px; margin-bottom: 30px; }
+    .hero h1 { font-size: 52px; line-height: 1.2; margin-bottom: 20px; }
+    .hero p { font-size: 18px; color: #6B7280; margin-bottom: 40px; }
+    .btn-group { gap: 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #D97706; color: white; border: none; padding: 14px 32px; border-radius: 12px; font-size: 18px; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn-outline { background: white; color: #D97706; border: 1px solid #D97706; padding: 14px 32px; border-radius: 12px; font-size: 18px; cursor: pointer; text-decoration: none; display: inline-block; }
+
+    /* 悬浮客服按钮 */
+    .service-float {
+      position: fixed;
+      right: 24px;
+      bottom: 32px;
+      z-index: 999;
+      background: linear-gradient(135deg, #D97706, #B45309);
+      color: white;
+      padding: 14px 22px;
+      border-radius: 50px;
+      box-shadow: 0 4px 16px rgba(180, 83, 9, 0.35);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+    .service-float:hover { transform: translateY(-3px); }
+
+    /* ✅ 返回顶部按钮样式 */
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 100px;
+      z-index: 998;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #D97706, #B45309);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(180, 83, 9, 0.35);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px);
+    }
+
+
+    /* 通用板块样式 */
+    section { padding: 40px 0 80px; }
+    h2 { font-size: 36px; font-weight: bold; color: #1F2937; margin-bottom: 12px; }
+    .sec-desc { font-size: 16px; color: #6B7280; margin-bottom: 32px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .card { background: #fff; padding: 32px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #FDF2E7; }
+    .card h3 { font-size: 22px; font-weight: bold; color: #1F2937; margin-bottom: 16px; }
+    .card p { color: #4B5563; font-size: 15px; line-height: 1.7; }
+    .divider { border-top: 1px dashed #E5E7EB; padding-top: 16px; margin-top: 8px; }
+    .step-num { width: 48px; height: 48px; background: #B45309; color: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; margin-bottom: 20px; }
+    .faq-item { background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #FDF2E7; margin-bottom: 16px; }
+    .faq-item h4 { font-size: 17px; font-weight: 600; color: #1F2937; margin-bottom: 8px; }
+    .faq-item p { color: #4B5563; font-size: 15px; }
+    .policy-box { background: #fff; padding: 32px; border-radius: 16px; border: 1px solid #FDF2E7; }
+    .policy-box h3 { font-size: 20px; font-weight: bold; margin-bottom: 16px; color: #1F2937; }
+    .policy-box p { color: #4B5563; font-size: 15px; line-height: 1.8; margin-bottom: 12px; }
+    .contact-box { background: #fff; padding: 32px; border-radius: 16px; border: 1px solid #FDF2E7; text-align: center; }
+    .contact-box h3 { font-size: 22px; font-weight: bold; margin-bottom: 20px; color: #1F2937; }
+    .contact-box p { font-size: 16px; color: #4B5563; margin-bottom: 10px; }
+    footer { text-align: center; padding: 30px 0; color: #9CA3AF; font-size: 14px; border-top: 1px solid #F3E8D6; margin-top: 20px; }
+
+    /* 响应式适配手机 */
+    @media(max-width:900px) {
+      .grid-3, .grid-4 { grid-template-columns: 1fr !important; }
+      .hero h1 { font-size: 36px; }
+      .nav-links a { margin-left: 12px; font-size: 14px; }
+      nav { flex-direction: column; text-align: center; }
+      .service-float { right: 16px; bottom: 20px; padding: 12px 18px; font-size: 15px; }
+      .back-to-top { right: 16px; bottom: 88px; width: 44px; height: 44px; font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 悬浮客服按钮 → 固定右下角 -->
+  <a href="https://t.me/DDXX88888888" target="_blank" class="service-float">💬 在线咨询</a>
+
+  <!-- ✅ 返回顶部按钮 -->
+  <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+  <div class="container">
+    <!-- 顶部导航 -->
+    <nav>
+      <div class="logo">GZ飞机号/WhatsApp</div>
+      <div class="nav-links">
+        <a href="#home">首页</a>
+        <a href="#service">服务内容</a>
+        <a href="#flow">合作流程</a>
+        <a href="#faq">常见问题</a>
+        <a href="#policy">政策说明</a>
+        <a href="#contact">联系我们</a>
+      </div>
+    </nav>
+
+    <!-- 主视觉区 -->
+    <section class="hero" id="home">
+      <div class="tag">在线咨询 · 服务说明 · 售后支持</div>
+      <h1>GZ飞机号/WhatsApp<br>海外社媒账号服务</h1>
+      <p>GZ飞机号/WhatsApp专注数字账号服务，TG/WhatsApp新老号·适合长期使用。</p>
+      <div class="btn-group">
+        <a href="Detail.html" class="btn-primary">telegram购买入口</a>
+        <a href="Detail.html" class="btn-outline">WhatsApp购买入口</a>
+      </div>
+    </section>
+
+    <!-- 三列卡片 -->
+    <div class="grid-3" style="padding-bottom: 40px;">
+      <div class="card">
+        <h3>信息说明清楚</h3>
+        <p>重点展示服务范围、合作流程与常见问题，减少重复沟通。</p>
+      </div>
+      <div class="card">
+        <h3>展示风格正式</h3>
+        <p>适合做业务官网首页、说明页、咨询入口。</p>
+      </div>
+      <div class="card">
+        <h3>支持后续扩展</h3>
+        <p>可继续加入在线客服、公告说明、政策页面与工单入口。</p>
+      </div>
+    </div>
+
+    <!-- 服务内容板块 -->
+    <section id="service">
+      <h2>服务内容</h2>
+      <p class="sec-desc">这一版内容更偏向真实业务展示，重点放在服务说明、支持范围、处理流程与后续沟通方式上。</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>账号使用咨询</h3>
+          <p>面向海外社媒相关场景，提供基础使用说明、常见问题整理和日常维护建议，帮助用户更快了解服务内容。</p>
+          <div class="divider">
+            <p>基础使用说明</p>
+            <p style="margin: 12px 0;">常见问题整理</p>
+            <p>日常维护建议</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>运营支持说明</h3>
+          <p>适合需要长期运营支持的用户或团队，用于展示处理方式、支持范围、响应流程和合作须知。</p>
+          <div class="divider">
+            <p>支持范围说明</p>
+            <p style="margin: 12px 0;">合作流程清楚</p>
+            <p>适合持续更新</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>售后与反馈</h3>
+          <p>为合作后的问题反馈、沟通处理和后续支持提供统一说明入口，使页面整体更完整、更像正式官网。</p>
+          <div class="divider">
+            <p>问题反馈处理</p>
+            <p style="margin: 12px 0;">售后沟通支持</p>
+            <p>后续说明入口</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 合作流程板块 -->
+    <section id="flow">
+      <h2>合作流程</h2>
+      <p class="sec-desc">通过更清楚的步骤展示，让访客更容易了解从咨询到后续支持的大致流程。</p>
+      <div class="grid-4">
+        <div class="card">
+          <div class="step-num">01</div>
+          <h3>提交需求</h3>
+          <p>先沟通基本需求、使用方向和希望获得的支持内容，便于后续更快安排说明。</p>
+        </div>
+        <div class="card">
+          <div class="step-num">02</div>
+          <h3>确认方案</h3>
+          <p>根据实际需求整理对应说明，包括支持范围、处理方式、注意事项与服务规则。</p>
+        </div>
+        <div class="card">
+          <div class="step-num">03</div>
+          <h3>进入处理</h3>
+          <p>确认后进入协助流程，可根据需要继续扩展状态展示、公告区域或工单模块。</p>
+        </div>
+        <div class="card">
+          <div class="step-num">04</div>
+          <h3>后续跟进</h3>
+          <p>通过统一入口继续沟通问题、查看说明并进行反馈，提升长期协作效率。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 常见问题板块 -->
+    <section id="faq">
+      <h2>常见问题</h2>
+      <p class="sec-desc">整理咨询与合作中最常遇到的疑问，帮助你快速了解关键信息、减少沟通成本。</p>
+      <div>
+        <div class="faq-item">
+          <h4>🔹 服务范围包括哪些平台？</h4>
+          <p>主要面向海外主流社媒与通讯平台账号服务，涵盖新号、老号、长期维护、使用咨询与运营支持等相关事项。</p>
+        </div>
+        <div class="faq-item">
+          <h4>🔹 下单后多久可以处理完成？</h4>
+          <p>根据需求复杂程度有所不同，常规需求一般在1–3个工作日内处理完毕，特殊情况将提前说明预计时长。</p>
+        </div>
+        <div class="faq-item">
+          <h4>🔹 是否提供售后保障与答疑？</h4>
+          <p>服务交付后提供统一售后入口，支持问题反馈、使用咨询与后续沟通，保障合作后的长期稳定使用。</p>
+        </div>
+        <div class="faq-item">
+          <h4>🔹 如何确保信息与资金安全？</h4>
+          <p>全程不索要敏感隐私信息、不公开用户资料、不设资金池。交易与沟通流程安全合规，资料严格保密。</p>
+        </div>
+        <div class="faq-item">
+          <h4>🔹 支持哪些沟通与交付方式？</h4>
+          <p>采用统一渠道对接、说明文档交付、在线答疑跟进，建立长期稳定的沟通入口，便于后续持续协作。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 政策说明板块 -->
+    <section id="policy">
+      <h2>政策说明</h2>
+      <p class="sec-desc">明确服务前提、使用规范、责任边界与相关约定，保障双方权益、避免误解。</p>
+      <div class="policy-box">
+        <h3>📋 服务前提与使用规范</h3>
+        <p>1. 本服务仅面向海外业务场景，不得用于任何违反当地法律法规、官方用户协议的用途。使用者需自行确认使用场景合规。</p>
+        <p>2. 服务仅提供咨询、说明、协助与支持，不承诺任何特定效果，不保证官方账号不发生政策变更、风控调整等客观变化。</p>
+        <p>3. 严禁利用本服务从事诈骗、营销骚扰、数据爬取、违规批量运营等行为，一经发现将立即终止服务并保留追责权利。</p>
+        <p>4. 使用者提供的信息应真实合法，不得冒用他人身份或提交违规内容；因虚假信息引发的一切后果由使用者自行承担。</p>
+        <p style="margin-bottom: 0;">5. 服务过程中涉及的账号归属、使用权限等以对应平台官方规则为准，我方不承接账号本身的所有权与担保责任。</p>
+      </div>
+    </section>
+
+    <!-- 联系我们板块 -->
+    <section id="contact">
+      <h2>联系我们</h2>
+      <p class="sec-desc">有任何需求或疑问，均可通过以下方式咨询沟通，我们将尽快为你解答。</p>
+      <div class="contact-box">
+        <h3>💬 在线咨询渠道</h3>
+        <p><strong>Telegram：</strong><a href="https://t.me/DDXX88888888" target="_blank" style="color:#B45309; font-weight:bold; text-decoration:none;">@DDXX88888888</a></p>
+        <p><strong>服务时间：</strong>工作日 10:00–22:00（海外时区）</p>
+        <p><strong>平均响应：</strong>工作时段 1–3 小时内回复</p>
+        <p style="margin-top: 16px; color: #B45309; font-weight: 500;">提交需求 → 确认方案 → 处理交付 → 售后跟进</p>
+        <p style="margin-top: 8px; color: #6B7280; font-size: 14px;">合作全程一对一沟通，建立专属服务入口，便于长期协作。</p>
+      </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer>
+      © 2025 FYSK飞机号 · 海外社媒账号服务 · 专注咨询与支持
+    </footer>
+  </div>
+
+  <!-- ✅ 返回顶部控制脚本 -->
+  <script>
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  </script>
+
+</body>
+</html>
