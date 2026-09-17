@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tgwalink.github.io/TG/index.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/index.html</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG/Detail.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/Detail.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG/Detailtwo.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/Detailtwo.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- WhatsApp 商品页 -->
   <url>
-    <loc>https://tgwalink.github.io/TG/whatsApp/waproduct.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/whatsApp/waproduct.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG/whatsApp/waproduct_two.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/whatsApp/waproduct_two.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG/whatsApp/waproduct_three.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/whatsApp/waproduct_three.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG/whatsApp/waproduct_four.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/whatsApp/waproduct_four.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tgwalink.github.io/TG/whatsApp/waproduct_five.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/whatsApp/waproduct_five.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Telegram 商品页 -->
   <url>
-    <loc>https://tgwalink.github.io/TG/telegram/product.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/telegram/product.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
     <url>
-    <loc>https://tgwalink.github.io/TG/telegram/product_two.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/telegram/product_two.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
     <url>
-    <loc>https://tgwalink.github.io/TG/telegram/product_three.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/telegram/product_three.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
     <url>
-    <loc>https://tgwalink.github.io/TG/telegram/product_four.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/telegram/product_four.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
     <url>
-    <loc>https://tgwalink.github.io/TG/telegram/product_five.html</loc>
+    <loc>https://tgwalink.github.io/tgwa/telegram/product_five.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
